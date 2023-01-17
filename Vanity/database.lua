@@ -15,6 +15,7 @@ add_staff({user = 'KitcheRules', reason = 'Moderation association (Friends with 
 add_staff({user = 'CheaterClarifyEL', reason = 'Moderation association (Friends with staff)'})
 add_staff({user = 'Trimti', reason = 'Staff member, not much known, unmarked account'})
 add_staff({user = 'WarthogNation6', reason = 'Staff member, not much known, unmarked account'})
+add_staff({user = 'kitcatIover',reason = 'Unmarked admin account'})
 --[[
 ** Currently removed until they move their accounts out of the groups 
 add_staff({user = 'alphaplayer91', reason = 'High ranking staff, quick to abuse his power. The SteffJonez of Vanity.'})
