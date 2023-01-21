@@ -33,6 +33,7 @@ do
         notifications = {};
         tweens = {};
         theme = {};
+        esp_preview = {};
         zindexOrder = {
             ['indicator'] = 950;
             ['window'] = 1000;
@@ -1558,6 +1559,7 @@ do
                             Outline = true;
                             Parent = objs.esp_innerBorder1;
                         });
+                        library.esp_preview.name = objs.esp_name
                     end;
 
                     -- Bottom text
@@ -1573,7 +1575,7 @@ do
                             Outline = true;
                             Parent = objs.esp_innerBorder1;
                         });
-
+                        library.esp_preview.distance = objs.esp_distance
                         objs.esp_weapon = utility:Draw('Text', {
                             Position = newUDim2(0.5, 0, 0, 245);
                             Center = true;
@@ -1585,6 +1587,7 @@ do
                             Outline = true;
                             Parent = objs.esp_innerBorder1;
                         });
+                        library.esp_preview.weapon = objs.esp_weapon
                     end;
 
                     -- Side text
@@ -1600,6 +1603,7 @@ do
                             Outline = true;
                             Parent = objs.esp_innerBorder1;
                         });
+                        library.esp_preview.health = objs.esp_health
 
                         objs.esp_flags = utility:Draw('Text', {
                             Position = newUDim2(0.5, 100, 0, 18);
@@ -1612,6 +1616,7 @@ do
                             Outline = true;
                             Parent = objs.esp_innerBorder1;
                         });
+                        library.esp_preview.flags = objs.esp_flags
                     end;
 
                     -- Box
@@ -1625,6 +1630,7 @@ do
                             Thickness = 3;
                             Parent = objs.esp_innerBorder1;
                         });
+                        library.esp_preview.box_outline = objs.esp_man_box_outline
                     
                         objs.esp_man_box = utility:Draw('Square', {
                             Size = newUDim2(0, 158, 0, 215);
@@ -1635,6 +1641,7 @@ do
                             Thickness = 1;
                             Parent = objs.esp_innerBorder1;
                         });
+                        library.esp_preview.box = objs.esp_man_box
                     end;
 
                     -- Healthbar
@@ -1647,6 +1654,7 @@ do
                             Thickness = 1;
                             Parent = objs.esp_innerBorder1;
                         });
+                        library.esp_preview.health_bar = objs.esp_man_healthbar
                         objs.esp_man_healthbar_outline = utility:Draw('Square', {
                             Size = newUDim2(0, 3, 0, 217);
                             Position = newUDim2(0.5, -85, 0, 19);
@@ -1655,6 +1663,7 @@ do
                             Thickness = 3;
                             Parent = objs.esp_innerBorder1;
                         });
+                        library.esp_preview.health_bar_outline = objs.esp_man_healthbar_outline
                     end;
 
 
@@ -5342,8 +5351,11 @@ do
     --library:init();
 end;
 getgenv().library = library
---[[ocal window = library.NewWindow({title = "pie.solutions", size = UDim2.new(0, 625, 0, 808)});
+return library
+--[[local window = library.NewWindow({title = "pie.solutions", size = UDim2.new(0, 625, 0, 808)});
 library:CreateSettingsTab(window);
 window:AddTab('combat')
 
-library:SendNotification('iesuiofeusiofuesofjesofsefjioeufioaw')]]
+library:SendNotification('iesuiofeusiofuesofjesofsefjioeufioaw')
+
+library.esp_preview.name.Color = Color3.fromRGB(255,0,0)]]
