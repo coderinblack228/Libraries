@@ -5351,6 +5351,7 @@ do
     --library:init();
 end;
 getgenv().library = library
+return --library
 --[[local window = library.NewWindow({title = "pie.solutions", size = UDim2.new(0, 625, 0, 808)});
 library:CreateSettingsTab(window);
 window:AddTab('combat')
