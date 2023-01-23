@@ -5332,9 +5332,14 @@ do
                     setByPreset = true
                     for _,v in next, library.themes do
                         if v.name == new_theme then
+                            library.options.theme_accent:SetColor(v.theme.Accent);
+                            library.options.theme_border1:SetColor(v.theme['Border 1'])
+                            library.options.theme_border2:SetColor(v.theme['Border 2'])
+                            library.options.theme_border3:SetColor(v.theme['Border 3'])
                             for x, d in pairs(library.options) do
                                 if v.theme[tostring(x)] ~= nil then
                                     d:SetColor(v.theme[tostring(x)]);
+                                    
                                 end;
                             end;
                             library:SetTheme(v.theme);
