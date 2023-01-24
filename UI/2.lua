@@ -929,24 +929,11 @@ do
         end
 
         for i,v in next, self.images do
-            if not isfile(self.cheatname..'/assets/'..i..'.oh') then
-                printconsole('downloading '..i..' to image cache')
-                writefile(self.cheatname..'/assets/'..i..'.oh',
-                    syn.crypt.custom.encrypt(
-                        'aes-ctr',
-                        game:HttpGet(v),
-                        '4XGudgFuutoHUM2Ctwsq4YrQ',
-                        'zP5JJWPSIbf5Xuuy'
-                    )
-                )
-            end
-            self.images[i] = syn.crypt.custom.decrypt(
-                'aes-ctr',
-                readfile(self.cheatname..'/assets/'..i..'.oh'),
-                '4XGudgFuutoHUM2Ctwsq4YrQ',
-                'zP5JJWPSIbf5Xuuy'
-            )
+        if not isfile(self.cheatname..'/assets/'..i..'.oh') then
+            writefile(self.cheatname..'/assets/'..i..'.oh', game:HttpGet(v))
         end
+        self.images[i] = readfile(self.cheatname..'/assets/'..i..'.oh');
+    end
 
         self.cursor1 = utility:Draw('Triangle', {Filled = true, Color = fromrgb(255,255,255), ZIndex = self.zindexOrder.cursor});
         self.cursor2 = utility:Draw('Triangle', {Filled = true, Color = fromrgb(85,85,85), self.zindexOrder.cursor-1});
